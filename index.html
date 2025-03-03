@@ -66,6 +66,74 @@ width="400" height="300"
  <p>doublyswallowme</p>
 </video>
 
+<h2>数字游戏</h2>
+<p>你相信占星术吗？我会向你展示占星术的神奇！</p>
+
+<label for="secretNumber">请先想一个正整数，为了防止作弊，请你输入到这里：</label>
+<input type="number" id="secretNumber" placeholder="输入你的数字">
+<button onclick="storeSecret()">确定</button>
+
+<br><br>
+
+<label for="birthYear">你的出生年份是？：</label>
+<input type="number" id="birthYear">
+
+<label for="zodiac">现在，请选择你的星座：</label>
+<select id="zodiac">
+    <option value="">选择星座</option>
+    <option value="白羊座">白羊座</option>
+    <option value="金牛座">金牛座</option>
+    <option value="双子座">双子座</option>
+    <option value="巨蟹座">巨蟹座</option>
+    <option value="狮子座">狮子座</option>
+    <option value="处女座">处女座</option>
+    <option value="天秤座">天秤座</option>
+    <option value="天蝎座">天蝎座</option>
+    <option value="射手座">射手座</option>
+    <option value="摩羯座">摩羯座</option>
+    <option value="水瓶座">水瓶座</option>
+    <option value="双鱼座">双鱼座</option>
+</select>
+
+<button onclick="revealNumber()">揭晓数字</button>
+
+<h3>最终的结果：</h3>
+<p id="output"></p>
+
+<script>
+    let storedNumber = null;
+
+    function storeSecret() {
+        let num = document.getElementById("secretNumber").value;
+        if (num === "") {
+            alert("请输入一个数字！");
+            return;
+        }
+        storedNumber = num;
+        document.getElementById("secretNumber").value = ""; // 清空输入框
+        alert("已记录！现在让第二个人输入信息。");
+    }
+
+    function revealNumber() {
+        let birthYear = document.getElementById("birthYear").value;
+        let zodiac = document.getElementById("zodiac").value;
+
+        if (birthYear === "" || zodiac === "") {
+            alert("请完整输入出生年份和星座！");
+            return;
+        }
+
+        if (storedNumber === null) {
+            alert("你还没有输入第一个数字！");
+            return;
+        }
+
+        // 输出最初的数字
+        document.getElementById("output").innerText = `神奇的结果是：${storedNumber}`;
+    }
+</script>
+
+
   
   
 
