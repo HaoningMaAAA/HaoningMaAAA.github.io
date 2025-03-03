@@ -76,18 +76,18 @@ width="400" height="300"
  <p>doublyswallowme</p>
 </video>
 
-<h2>数字游戏</h2>
+<h2>占星术</h2>
 
 <!-- 第一步：输入数字 -->
 <div id="step1" class="step">
-    <label for="secretNumber">请先输入一个神秘的数字：</label>
-    <input type="number" id="secretNumber" placeholder="输入你的数字">
+    <label for="secretNumber">你相信占星术吗？不相信的话，请你想一个正整数，为了防止作弊，请你把数字记录在这一栏：</label>
+    <input type="number" id="secretNumber">
     <button onclick="nextStep(1)">确定</button>
 </div>
 
 <!-- 第二步：输入出生年份 -->
 <div id="step2" class="step">
-    <label for="birthYear">你的出生年份是？：</label>
+    <label for="birthYear">请问你的出生年份是？：</label>
     <input type="number" id="birthYear" placeholder="如 1999">
     <button onclick="nextStep(2)">下一步</button>
 </div>
@@ -115,7 +115,7 @@ width="400" height="300"
 
 <!-- 最终结果 -->
 <div id="step4" class="step">
-    <h3>神奇的结果：</h3>
+    <h3>啊，原来是这个星座，这个星座的人通常都会想这个数字：</h3>
     <p id="output"></p>
 </div>
 
