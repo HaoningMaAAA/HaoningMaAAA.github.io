@@ -1,17 +1,12 @@
 <html>
 <head><title>My Site</title>
     <style>
-        /* 让所有部分初始隐藏，只有第一个部分显示 */
-        .step {
-            display: none;
-        }
-        #step1 {
-            display: block;
-        }
-        
+
         * {
             font-family: Arial, Verdana, sans-serif;
         }
+        body {
+             background-color: rgb(200,200,200);}
  
 
     </style>
@@ -81,87 +76,6 @@ width="400" height="300"
  controls>
  <p>doublyswallowme</p>
 </video>
-
-<h2>占星术</h2>
-
-<!-- 第一步：输入数字 -->
-<div id="step1" class="step">
-    <label for="secretNumber">你相信占星术吗？不相信的话，请你想一个正整数，为了防止作弊，请你把数字记录在这一栏：</label>
-    <input type="number" id="secretNumber">
-    <button onclick="nextStep(1)">确定</button>
-</div>
-
-<!-- 第二步：输入出生年份 -->
-<div id="step2" class="step">
-    <label for="birthYear">请问你的出生年份是？：</label>
-    <input type="number" id="birthYear">
-    <button onclick="nextStep(2)">下一步</button>
-</div>
-
-<!-- 第三步：选择星座 -->
-<div id="step3" class="step">
-    <label for="zodiac">现在，请选择你的星座：</label>
-    <select id="zodiac">
-        <option value="">选择星座</option>
-        <option value="白羊座">白羊座</option>
-        <option value="金牛座">金牛座</option>
-        <option value="双子座">双子座</option>
-        <option value="巨蟹座">巨蟹座</option>
-        <option value="狮子座">狮子座</option>
-        <option value="处女座">处女座</option>
-        <option value="天秤座">天秤座</option>
-        <option value="天蝎座">天蝎座</option>
-        <option value="射手座">射手座</option>
-        <option value="摩羯座">摩羯座</option>
-        <option value="水瓶座">水瓶座</option>
-        <option value="双鱼座">双鱼座</option>
-    </select>
-    <button onclick="nextStep(3)">完成</button>
-</div>
-
-<!-- 最终结果 -->
-<div id="step4" class="step">
-    <h3>啊，原来是这个星座，这个星座的人的想法往往是最好预测的：</h3>
-    <p id="output"></p>
-</div>
-
-<script>
-    let storedNumber = null;  // 变量用于存储最初的数字
-
-    function nextStep(currentStep) {
-        if (currentStep === 1) {
-            let num = document.getElementById("secretNumber").value;
-            if (num === "") {
-                alert("请输入一个数字！");
-                return;
-            }
-            storedNumber = num;
-        }
-
-        if (currentStep === 2) {
-            let birthYear = document.getElementById("birthYear").value;
-            if (birthYear === "") {
-                alert("请输入你的出生年份！");
-                return;
-            }
-        }
-
-        if (currentStep === 3) {
-            let zodiac = document.getElementById("zodiac").value;
-            if (zodiac === "") {
-                alert("请选择你的星座！");
-                return;
-            }
-
-            // 最终显示最初的数字
-            document.getElementById("output").innerText = `你想的是不是：${storedNumber}`;
-        }
-
-        // 隐藏当前步骤，显示下一个步骤
-        document.getElementById(`step${currentStep}`).style.display = "none";
-        document.getElementById(`step${currentStep + 1}`).style.display = "block";
-    }
-</script>
 
 
 
