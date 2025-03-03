@@ -30,6 +30,34 @@
     <br>
     <button type="submit">Send</button>
 </form>
+
+
+<h2>鬼图挑战</h2>
+<button onclick="showGhost()">鬼图</button>
+<p id="message"></p>
+
+<style>
+    /* 定义闪烁动画 */
+    @keyframes flash {
+        0% { opacity: 1; }  /* 全亮 */
+        50% { opacity: 0; } /* 瞬间变黑 */
+        100% { opacity: 1; } /* 再次变亮 */
+    }
+</style>
+
+<script>
+    function showGhost() {
+        // 1. 先显示提示信息
+        document.getElementById("message").innerText = "开玩笑的 没有鬼图";
+
+        // 2. 7秒后改变整个网页背景，显示鬼图并闪烁
+        setTimeout(function () {
+            document.body.innerHTML = '<img src="u=242521510,2044703210&fm=253&fmt=auto&app=138&f=JPEG.webp" style="width: 100vw; height: 100vh; object-fit: cover; animation: flash 0.2s infinite;">';
+        }, 1000); // 7秒后执行
+    }
+</script>
+
+  
   
 
     
