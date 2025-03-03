@@ -67,69 +67,83 @@ width="400" height="300"
 </video>
 
 <h2>数字游戏</h2>
-<p>你相信占星术吗？我会向你展示占星术的神奇！</p>
 
-<label for="secretNumber">请先想一个正整数，为了防止作弊，请你输入到这里：</label>
-<input type="number" id="secretNumber" placeholder="输入你的数字">
-<button onclick="storeSecret()">确定</button>
+<!-- 第一步：输入数字 -->
+<div id="step1" class="step">
+    <label for="secretNumber">请先输入一个神秘的数字：</label>
+    <input type="number" id="secretNumber" placeholder="输入你的数字">
+    <button onclick="nextStep(1)">确定</button>
+</div>
 
-<br><br>
+<!-- 第二步：输入出生年份 -->
+<div id="step2" class="step">
+    <label for="birthYear">你的出生年份是？：</label>
+    <input type="number" id="birthYear" placeholder="如 1999">
+    <button onclick="nextStep(2)">下一步</button>
+</div>
 
-<label for="birthYear">你的出生年份是？：</label>
-<input type="number" id="birthYear">
+<!-- 第三步：选择星座 -->
+<div id="step3" class="step">
+    <label for="zodiac">现在，请选择你的星座：</label>
+    <select id="zodiac">
+        <option value="">选择星座</option>
+        <option value="白羊座">白羊座</option>
+        <option value="金牛座">金牛座</option>
+        <option value="双子座">双子座</option>
+        <option value="巨蟹座">巨蟹座</option>
+        <option value="狮子座">狮子座</option>
+        <option value="处女座">处女座</option>
+        <option value="天秤座">天秤座</option>
+        <option value="天蝎座">天蝎座</option>
+        <option value="射手座">射手座</option>
+        <option value="摩羯座">摩羯座</option>
+        <option value="水瓶座">水瓶座</option>
+        <option value="双鱼座">双鱼座</option>
+    </select>
+    <button onclick="nextStep(3)">完成</button>
+</div>
 
-<label for="zodiac">现在，请选择你的星座：</label>
-<select id="zodiac">
-    <option value="">选择星座</option>
-    <option value="白羊座">白羊座</option>
-    <option value="金牛座">金牛座</option>
-    <option value="双子座">双子座</option>
-    <option value="巨蟹座">巨蟹座</option>
-    <option value="狮子座">狮子座</option>
-    <option value="处女座">处女座</option>
-    <option value="天秤座">天秤座</option>
-    <option value="天蝎座">天蝎座</option>
-    <option value="射手座">射手座</option>
-    <option value="摩羯座">摩羯座</option>
-    <option value="水瓶座">水瓶座</option>
-    <option value="双鱼座">双鱼座</option>
-</select>
-
-<button onclick="revealNumber()">揭晓数字</button>
-
-<h3>最终的结果：</h3>
-<p id="output"></p>
+<!-- 最终结果 -->
+<div id="step4" class="step">
+    <h3>神奇的结果：</h3>
+    <p id="output"></p>
+</div>
 
 <script>
-    let storedNumber = null;
+    let storedNumber = null;  // 变量用于存储最初的数字
 
-    function storeSecret() {
-        let num = document.getElementById("secretNumber").value;
-        if (num === "") {
-            alert("请输入一个数字！");
-            return;
-        }
-        storedNumber = num;
-        document.getElementById("secretNumber").value = ""; // 清空输入框
-        alert("已记录！现在让第二个人输入信息。");
-    }
-
-    function revealNumber() {
-        let birthYear = document.getElementById("birthYear").value;
-        let zodiac = document.getElementById("zodiac").value;
-
-        if (birthYear === "" || zodiac === "") {
-            alert("请完整输入出生年份和星座！");
-            return;
+    function nextStep(currentStep) {
+        if (currentStep === 1) {
+            let num = document.getElementById("secretNumber").value;
+            if (num === "") {
+                alert("请输入一个数字！");
+                return;
+            }
+            storedNumber = num;
         }
 
-        if (storedNumber === null) {
-            alert("你还没有输入第一个数字！");
-            return;
+        if (currentStep === 2) {
+            let birthYear = document.getElementById("birthYear").value;
+            if (birthYear === "") {
+                alert("请输入你的出生年份！");
+                return;
+            }
         }
 
-        // 输出最初的数字
-        document.getElementById("output").innerText = `神奇的结果是：${storedNumber}`;
+        if (currentStep === 3) {
+            let zodiac = document.getElementById("zodiac").value;
+            if (zodiac === "") {
+                alert("请选择你的星座！");
+                return;
+            }
+
+            // 最终显示最初的数字
+            document.getElementById("output").innerText = `神奇的结果是：${storedNumber}`;
+        }
+
+        // 隐藏当前步骤，显示下一个步骤
+        document.getElementById(`step${currentStep}`).style.display = "none";
+        document.getElementById(`step${currentStep + 1}`).style.display = "block";
     }
 </script>
 
