@@ -1,32 +1,5 @@
 <html>
 <head><title>My Site</title></head>
-<script>
-        async function generateRoast() {
-            let name = document.getElementById("nameInput").value.trim();
-            if (name === "") {
-                alert("请输入一个名字！");
-                return;
-            }
-
-            let prompt = `对名字 "${name}" 进行毫不留情的吐槽。`;
-
-            let response = await fetch("https://api.deepseek.com/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "sk-28f64125417647d3a003cf7753040ecc"
-                },
-                body: JSON.stringify({
-                    model: "deepseek-chat",
-                    messages: [{ role: "user", content: prompt }],
-                    max_tokens: 50
-                })
-            });
-
-            let data = await response.json();
-            document.getElementById("output").innerText = data.choices[0].message.content;
-        }
-    </script>
 <body><h1>摊慕斯被强上了</h1>
 <a href="#one">秘密</a><br />
 <a href="#two">资源</a><br />
@@ -67,6 +40,33 @@
     <button onclick="generateRoast()">开始攻击！</button>
     <h3>AI 回复：</h3>
     <p id="output"></p>
+<script>
+        async function generateRoast() {
+            let name = document.getElementById("nameInput").value.trim();
+            if (name === "") {
+                alert("请输入一个名字！");
+                return;
+            }
+
+            let prompt = `对名字 "${name}" 进行毫不留情的吐槽。`;
+
+            let response = await fetch("https://api.deepseek.com/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "sk-28f64125417647d3a003cf7753040ecc"
+                },
+                body: JSON.stringify({
+                    model: "deepseek-chat",
+                    messages: [{ role: "user", content: prompt }],
+                    max_tokens: 50
+                })
+            });
+
+            let data = await response.json();
+            document.getElementById("output").innerText = data.choices[0].message.content;
+        }
+    </script>
 
 
 
