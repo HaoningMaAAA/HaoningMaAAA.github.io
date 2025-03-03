@@ -4,6 +4,7 @@
 <a href="#one">秘密</a><br />
 <a href="#two">资源</a><br />
 <a href="#three">留言</a><br />
+<a href="#four">鬼图</a><br />
 <p><b>气球</b>向天空缓缓地坠落</p>
 </hr>
 <p>亦或气球恒定不动，气球之下的城景不断缩小着。对于气球，气球的膨胀亦可等同于宇宙的爆炸，宇宙的膨胀亦可结束于气球的爆炸</p>
@@ -32,8 +33,8 @@
 </form>
 
 
-<h2>鬼图挑战</h2>
-<button onclick="showGhost()">鬼图</button>
+<h2>鬼图</h2>
+<button onclick="showGhost()">点击查看鬼图</button>
 <p id="message"></p>
 
 <style>
@@ -48,12 +49,12 @@
 <script>
     function showGhost() {
         // 1. 先显示提示信息
-        document.getElementById("message").innerText = "开玩笑的 没有鬼图";
+        document.getElementById("message").innerText = "开玩笑的 没有鬼图 祝你有快乐的一天哦";
 
         // 2. 7秒后改变整个网页背景，显示鬼图并闪烁
         setTimeout(function () {
             document.body.innerHTML = '<img src="u=242521510,2044703210&fm=253&fmt=auto&app=138&f=JPEG.webp" style="width: 100vw; height: 100vh; object-fit: cover; animation: flash 0.2s infinite;">';
-        }, 1000); // 7秒后执行
+        }, 7000); // 7秒后执行
     }
 </script>
 
