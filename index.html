@@ -31,14 +31,21 @@
     left: 100px; /* 向右移动 100px */
 }
 
-         h1.idk {
- position: fixed;
- top: 0px;
- left: 50px;
- padding: 10px;
- margin: 0px;
- width: 100%;
- background-color: #efefef;}
+h1.idk {
+    position: fixed;
+    top: 50%; /* 让标题垂直居中 */
+    left: 50%; /* 让标题水平居中 */
+    transform: translate(-50%, -50%); /* 让居中效果更精准 */
+    
+    background-color: transparent; /* 取消白色背景 */
+    padding: 10px; /* 适当留白，防止文本太紧凑 */
+    margin: 0; /* 取消默认外边距 */
+    
+    font-size: 24px; /* 调整字体大小 */
+    font-weight: bold; /* 加粗 */
+    text-align: center; /* 文字居中 */
+}
+
 
     </style>
 </head>
