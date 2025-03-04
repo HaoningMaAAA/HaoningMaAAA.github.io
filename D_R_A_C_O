@@ -2,7 +2,20 @@
  <title>Grid Layout</title> 
  <link rel="stylesheet" type="text/css"
     href="css/960_12_col.css" /> 
-  <style>See the right hand page</style>
+  <style>    * {
+ font-family: Arial, Verdana, sans-serif;
+ color: #665544;
+ text-align: center;}
+ #nav, #feature, .article, #footer {
+ background-color: #efefef;
+ margin-top: 20px;
+ padding: 10px 0px 5px 0px;}
+ #feature, .article {
+ height: 100px;}
+ li {
+ display: inline;
+ padding: 5px;}
+</style>
  </head>
  <body>
  <div class="container_12 clearfix">
@@ -37,16 +50,4 @@
  </body>
 
 
-    * {
- font-family: Arial, Verdana, sans-serif;
- color: #665544;
- text-align: center;}
- #nav, #feature, .article, #footer {
- background-color: #efefef;
- margin-top: 20px;
- padding: 10px 0px 5px 0px;}
- #feature, .article {
- height: 100px;}
- li {
- display: inline;
- padding: 5px;}
+
