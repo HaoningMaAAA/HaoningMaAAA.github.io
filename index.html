@@ -1,153 +1,49 @@
-<html>
-<head><title>My Site</title>
-    <style>
-
-        * {
-            font-family: "Courier New", Courier, monospace;
-        }
-        body {
-             background-color: rgb(255, 192, 203)
-;}
-        button:active {
-            background-color: green;
-            color: white;
-        }
-        p.two {
-             overflow: scroll;}
-
-        td {
- background-color: #0088dd;
- padding: 15px;
- border: 2px solid #000000;}
- table.five {
- border-collapse: collapse;}
-
-        a {
- cursor: move;}
-
-        p.example {
-    position: relative; /* 设置相对定位 */
-    top: 10px;  /* 向下移动 10px */
-    left: 100px; /* 向右移动 100px */
-}
-
-h1.idk {
-    position: fixed;
-    top: 50%; /* 让标题垂直居中 */
-    left: 50%; /* 让标题水平居中 */
-    transform: translate(-50%, -50%); /* 让居中效果更精准 */
-    
-    background-color: transparent; /* 取消白色背景 */
-    padding: 10px; /* 适当留白，防止文本太紧凑 */
-    margin: 0; /* 取消默认外边距 */
-    
-    font-size: 24px; /* 调整字体大小 */
-    font-weight: bold; /* 加粗 */
-    text-align: center; /* 文字居中 */
-}
-
-
-    </style>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>小网站</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding-top: 100px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+  </style>
 </head>
-<body><h1>摊慕斯被强上了</h1>
-<!-- 这样可以comment哦 -->
-<a href="#one">秘密</a><br />
-<a href="#two">资源</a><br />
-<a href="#three">留言</a><br />
-<a href="#four">鬼图</a><br />
-<p><b>气球</b>向天空缓缓地坠落</p>
-</hr>
-<p>亦或气球恒定不动，气球之下的城景不断缩小着。对于气球，气球的膨胀亦可等同于宇宙的爆炸，宇宙的膨胀亦可结束于气球的爆炸</p>
-<p>APT APT APT APT today im god tomorrow im god's son i fucked myself</p>
-<p>众所周知，奶龙是贝利亚的星<sup>怒</sup>不要啊贝利亚 我的第一次要留给月半猫</p> 
-<figure>
-  <img src="nailong.jpg" alt="尼斯湖" width="300">
-  <br/>
-  <figcaption>扔龙</figcaption>
-</figure>
+<body>
+  <div id="content"></div>
 
-<div>
-  <a href="D_R_A_C_O.html">关于</a>
-</div>
-  <a href="offthegrid.html">九宫格游戏</a>
-  <a href="https://www.baidu.com">现在还有沙比用百度吗</a><br />
-  <a href="mailto:mahaoning99@163.com">联系我呃呃呃呃呃呃</a><br />
-<h2 id="one">秘密</h2>
-<p>e68891e5afb9e79d80e887aae5b7b1e692b8e7aea1</p>
-<h2 id="two">资源</h2>
-<p>你来晚了，文件分享被取消了，哈哈哈哈，废物</p>
-<h2 id="three">留言</h2>
-  <form action="https://formspree.io/f/manqrpkw" method="POST">
-    <p>您输入的反馈会被俺收到</p>
-    <textarea name="message" cols="30" rows="5" placeholder="在这里输入..."></textarea>
-    <br>
-    <button type="submit">Send</button>
-</form>
+  <script>
+    const contentDiv = document.getElementById("content");
+    const today = new Date();
 
+    const isSpecialDate = today.getFullYear() === 1989 &&
+                          today.getMonth() === 5 &&     // 月份从0开始，6月是5
+                          today.getDate() === 1;
 
-<h2 id="four">鬼图</h2>
-<button onclick="showGhost()">点击查看鬼图</button>
-<p id="message"></p>
-
-<style>
-    /* 定义闪烁动画 */
-    @keyframes flash {
-        0% { opacity: 1; }  /* 全亮 */
-        50% { opacity: 0; } /* 瞬间变黑 */
-        100% { opacity: 1; } /* 再次变亮 */
+    if (isSpecialDate) {
+      contentDiv.innerHTML = `<h1>最左边密码盘的密码为：<br>格兰杰  16  U  氪</h1>`;
+    } else {
+      contentDiv.innerHTML = `
+        <ul>
+          <li>1：星空</li>
+          <li>2：冯</li>
+          <li>3：音乐</li>
+          <li>4：套娃</li>
+          <li>5：穆斯林</li>
+        </ul>`;
     }
-</style>
-
-<script>
-    function showGhost() {
-        // 1. 先显示提示信息
-        document.getElementById("message").innerText = "开玩笑的 没有鬼图 祝你有快乐的一天哦";
-
-        // 2. 7秒后改变整个网页背景，显示鬼图并闪烁
-        setTimeout(function () {
-            document.body.innerHTML = '<img src="u=242521510,2044703210&fm=253&fmt=auto&app=138&f=JPEG.webp" style="width: 100vw; height: 100vh; object-fit: cover; animation: flash 0.2s infinite;">';
-        }, 7000); // 7秒后执行
-    }
-</script>
-
-<h2>MC痴跪下</h2>  
-<video src="Minecraft 1.12.2 2024-06-05 01-16-04.mp4" 
-width="400" height="300" 
- controls>
- <p>doublyswallowme</p>
-</video>
-<br/>
- <table class="five">
- <tr>
- <td>wo</td>
- <td>ke</td>
- </tr>
- <tr>
- <td>jiao</td>
- <td>le</td>
- </tr>
- </table>
-<br/>
-
-<p class="example">
-In 1817 Baron von Drais invented a walking machine that would help him get around the 
-</p>
-<br/>
-<h1 class="idk">定冻基</h1>
-
-
-
-
-
-  
-  
-
-    
-
-
-
-
-
-
+  </script>
 </body>
 </html>
